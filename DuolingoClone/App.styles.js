@@ -8,6 +8,10 @@ const styles = StyleSheet.create({
         padding: 10,
         paddingTop: 40,
     },
+    activityIndicator: {
+        width: "90%",
+        flex: 1,
+    }
 });
 
 export default styles;
