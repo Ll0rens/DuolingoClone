@@ -4,10 +4,17 @@ import styles from "./styles";
 import mascot from "../../../assets/images/mascot.png"
 import Button from "../Button";
 const OpenEndedQuestion = ({question, onCorrect, onWrong}) => {
-    const onButtonPress = () => {
 
+    const [input, setInput] = useState('');
+    
+    const onButtonPress = () => {
+        if (question.answer.toLowerCase().trim() === input.toLowerCase().trim()) {
+            onCorrect();
+        } else {
+            onWrong();
+        }
+        setInput('');
     };
-    const [input, setInput] = useState('Test');
 
     return (
         <>
@@ -19,8 +26,8 @@ const OpenEndedQuestion = ({question, onCorrect, onWrong}) => {
                 </View>
             </View>
             <TextInput
-                onChange={setInput} //{(changedValue) => setInput(changedValue)}
                 value={input}
+                onChangeText={setInput} //{(changedValue) => setInput(changedValue)}
                 placeholder="Type in English"
                 style={styles.textInput}
                 textAlignVertical="top"
