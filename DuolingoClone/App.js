@@ -11,19 +11,28 @@ import Header from "./src/components/Header"
 const App = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(questions[currentQuestionIndex]);
+  const [lives, setLives] = useState(5)
 
   const onCorrect = () => {
     setCurrentQuestionIndex(currentQuestionIndex + 1)
   };
 
   const onWrong = () => {
-    Alert.alert("Wrooooong")
+    if (lives === 0) {
+      Alert.alert("Game Over", "Try again");
+      setCurrentQuestionIndex(0);
+      setLives(5);
+    } else {
+      Alert.alert("Wrooooong");
+      setLives(lives - 1);
+    }
   };
 
   useEffect(() => {
     if (currentQuestionIndex >= questions.length) {
       Alert.alert("You won");
       setCurrentQuestionIndex(0);
+
     } else {
       setCurrentQuestion(questions[currentQuestionIndex])
     }
@@ -31,7 +40,7 @@ const App = () => {
 
   return (
     <View style={styles.root}>
-      <Header progress={currentQuestionIndex / questions.length}/>
+      <Header progress={currentQuestionIndex / questions.length} lives={lives}/>
       {currentQuestion.type === "IMAGE_MULTIPLE_CHOICE" &&
       (<ImageMultipleChoiceQuestion
         question={currentQuestion}
