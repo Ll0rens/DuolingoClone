@@ -11,8 +11,6 @@ const Header = ({progress, lives}) => (
         <Image style={styles.icon} source={heart} resizeMode="contain"></Image>
         <Text style={styles.lives}>{lives}</Text>
     </View>
-
 );
-
 
 export default Header;

@@ -3,6 +3,7 @@ import {View, Text, Image, TextInput} from "react-native";
 import styles from "./styles";
 import mascot from "../../../assets/images/mascot.png"
 import Button from "../Button";
+
 const OpenEndedQuestion = ({question, onCorrect, onWrong}) => {
 
     const [input, setInput] = useState('');
@@ -34,8 +35,6 @@ const OpenEndedQuestion = ({question, onCorrect, onWrong}) => {
                 multiline
             />
             <Button text="Check" onPress={onButtonPress} disabled={!input}/>
-
-
         </>
     );
 };

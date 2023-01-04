@@ -26,8 +26,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: "lightgrey",
         borderRadius: 5,
-
-
     },
 
     sentence: {

@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         borderBottomWidth: 5,
         borderColor: "#57A600"
-
     },
     
     disabledContainer: {
@@ -26,7 +25,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: "white",
         fontWeight: "bold",
-
         borderColor: "white",
         borderBottomWidth: 1.5
     },

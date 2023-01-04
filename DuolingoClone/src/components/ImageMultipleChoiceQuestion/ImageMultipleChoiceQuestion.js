@@ -17,6 +17,7 @@ const ImageMultipleChoiceQuestion = ({question, onCorrect, onWrong}) => {
           setSelected(null);
         }
       };
+
     return (
     <>
         <Text style={styles.title}>{question.question}</Text>
@@ -48,6 +49,5 @@ ImageMultipleChoiceQuestion.propTypes = {
         ).isRequired,
     }).isRequired,
 };
-
 
 export default ImageMultipleChoiceQuestion;

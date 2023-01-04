@@ -2,7 +2,6 @@ import React from "react"
 import {View} from 'react-native'
 import styles from './styles'
 import PropTypes from "prop-types"
-//
 
 const ProgressBar = ({ progress }) => (
     <View style={styles.bg}>
@@ -11,4 +10,5 @@ const ProgressBar = ({ progress }) => (
         </View>
     </View>
     );
+    
 export default ProgressBar;

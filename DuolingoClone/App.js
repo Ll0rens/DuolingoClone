@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Alert, ActivityIndicator } from "react-native";
 import styles from "./App.styles";
-//import questions from "./assets/data/imageMulatipleChoiceQuestions";
-//import questions from "./assets/data/openEndedQuestions";
 import questions from "./assets/data/allQuestions";
 import ImageMultipleChoiceQuestion from "./src/components/ImageMultipleChoiceQuestion";
 import OpenEndedQuestion from "./src/components/OpenEndedQuestion/OpenEndedQuestion";
@@ -69,7 +67,7 @@ const App = () => {
 
   };
 
-  if (hasLoaded) {
+  if (!hasLoaded) {
     return(<ActivityIndicator style={styles.activityIndicator}/>);
   }
 
